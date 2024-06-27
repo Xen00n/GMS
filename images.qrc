@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>GMS_LOGO.png</file>
+        <file>Kathmandu-University-KU.jpg</file>
+        <file>basketball-court.png</file>
+        <file>footballll.png</file>
+        <file>house.png</file>
+        <file>volleyball.png</file>
+    </qresource>
+</RCC>
