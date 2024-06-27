@@ -60,4 +60,3 @@ void mainpage::on_button_logout_clicked()
     this->hide();
     l->showMaximized();
 }
-
