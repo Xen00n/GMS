@@ -29,4 +29,5 @@ private:
     Ui::mainpage *ui;
 };
 
+
 #endif // MAINPAGE_H

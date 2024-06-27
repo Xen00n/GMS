@@ -13,6 +13,8 @@ mainpage::mainpage(QWidget *parent)
     ui->button_book->setChecked(true);
 }
 
+
+
 mainpage::~mainpage()
 {
     delete ui;
