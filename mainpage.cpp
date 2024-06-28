@@ -91,6 +91,7 @@ void mainpage::on_button_logout_clicked()
 }
 
 
+
 void mainpage::on_button_football_clicked()
 {
     option_selector(football);
@@ -111,7 +112,4 @@ void mainpage::on_button_indoor_clicked()
 {
     option_selector(indoor);
 }
-
-
-
 
