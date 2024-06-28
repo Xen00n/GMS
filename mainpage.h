@@ -2,7 +2,7 @@
 #define MAINPAGE_H
 
 #include <QMainWindow>
-#include "customization.h"
+
 namespace Ui {
 class mainpage;
 }
@@ -14,9 +14,6 @@ class mainpage : public QMainWindow
 public:
     explicit mainpage(QWidget *parent = nullptr);
     ~mainpage();
-    static void book_window(_field field);
-    static void cancel_window(_field field);
-    static void view_window(_field field);
 
 
 private slots:

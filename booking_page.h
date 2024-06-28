@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+
 namespace Ui {
 class booking_page;
 }
@@ -18,5 +19,6 @@ public:
 private:
     Ui::booking_page *ui;
 };
+
 
 #endif // BOOKING_PAGE_H

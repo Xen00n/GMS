@@ -1,7 +1,6 @@
 #include "mainpage.h"
 #include "ui_mainpage.h"
 #include "loginpage.h"
-#include "customization.h"
 #include "booking_page.h"
 #include "cancel_page.h"
 #include "view_page.h"
@@ -17,6 +16,11 @@ mainpage::mainpage(QWidget *parent)
     ui->button_book->setChecked(true);
 }
 
+enum _option{
+    book,
+    cancel,
+    view
+};
 
 enum _option option = book;
 
@@ -98,6 +102,10 @@ void mainpage::on_button_basketball_clicked()
     option_selector();
 }
 
+void mainpage::on_button_volleyball_clicked()
+{
+    option_selector();
+}
 
 void mainpage::on_button_indoor_clicked()
 {
@@ -105,8 +113,5 @@ void mainpage::on_button_indoor_clicked()
 }
 
 
-void mainpage::on_button_volleyball_clicked()
-{
-    option_selector();
-}
+
 
