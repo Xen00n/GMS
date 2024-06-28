@@ -1,6 +1,9 @@
 #include "mainpage.h"
 #include "ui_mainpage.h"
 #include "loginpage.h"
+#include "booking_page.h"
+#include "cancel_page.h"
+#include "view_page.h"
 
 mainpage::mainpage(QWidget *parent)
     : QMainWindow(parent)
@@ -13,6 +16,29 @@ mainpage::mainpage(QWidget *parent)
     ui->button_book->setChecked(true);
 }
 
+enum _option{
+    book,
+    cancel,
+    view
+};
+
+enum _option option = book;
+
+void option_selector(_field field){
+    if(option == book){
+        booking_page *l = new booking_page(field);
+        l->showMaximized();
+    }
+    else if(option == cancel){
+        cancel_page *l = new cancel_page(field);
+        l->showMaximized();
+    }
+    else{
+        view_page *l = new view_page(field);
+        l->showMaximized();
+    }
+}
+
 mainpage::~mainpage()
 {
     delete ui;
@@ -22,6 +48,7 @@ mainpage::~mainpage()
 void mainpage::on_button_book_toggled(bool checked)
 {
     if(checked){
+        option = book;
         ui->button_view->setChecked(false);
         ui->button_cancel->setChecked(false);
     }
@@ -34,6 +61,7 @@ void mainpage::on_button_book_toggled(bool checked)
 void mainpage::on_button_cancel_toggled(bool checked)
 {
     if(checked){
+        option = cancel;
         ui->button_view->setChecked(false);
         ui->button_book->setChecked(false);
     }
@@ -45,6 +73,7 @@ void mainpage::on_button_cancel_toggled(bool checked)
 void mainpage::on_button_view_toggled(bool checked)
 {
     if(checked){
+        option = view;
         ui->button_cancel->setChecked(false);
         ui->button_book->setChecked(false);
     }
@@ -60,3 +89,27 @@ void mainpage::on_button_logout_clicked()
     this->hide();
     l->showMaximized();
 }
+
+
+
+void mainpage::on_button_football_clicked()
+{
+    option_selector(football);
+}
+
+
+void mainpage::on_button_basketball_clicked()
+{
+    option_selector(basketball);
+}
+
+void mainpage::on_button_volleyball_clicked()
+{
+    option_selector(volleyball);
+}
+
+void mainpage::on_button_indoor_clicked()
+{
+    option_selector(indoor);
+}
+

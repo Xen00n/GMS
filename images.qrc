@@ -5,6 +5,10 @@
         <file>basketball-court.png</file>
         <file>footballll.png</file>
         <file>house.png</file>
+        <file>footballll_hover.png</file>
+        <file>basketball-court_hover.png</file>
+        <file>house_hover.png</file>
+        <file>volleyball_hover.png</file>
         <file>volleyball.png</file>
     </qresource>
 </RCC>

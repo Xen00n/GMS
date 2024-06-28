@@ -25,8 +25,17 @@ private slots:
 
     void on_button_logout_clicked();
 
+    void on_button_football_clicked();
+
+    void on_button_basketball_clicked();
+
+    void on_button_indoor_clicked();
+
+    void on_button_volleyball_clicked();
+
 private:
     Ui::mainpage *ui;
 };
+
 
 #endif // MAINPAGE_H
