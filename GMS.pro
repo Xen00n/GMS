@@ -20,6 +20,7 @@ SOURCES += \
 HEADERS += \
     booking_page.h \
     cancel_page.h \
+    custom.h \
     loginpage.h \
     mainpage.h \
     mainwindow.h \

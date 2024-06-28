@@ -24,17 +24,17 @@ enum _option{
 
 enum _option option = book;
 
-void option_selector(){
+void option_selector(_field field){
     if(option == book){
-        booking_page *l = new booking_page();
+        booking_page *l = new booking_page(field);
         l->showMaximized();
     }
     else if(option == cancel){
-        cancel_page *l = new cancel_page();
+        cancel_page *l = new cancel_page(field);
         l->showMaximized();
     }
     else{
-        view_page *l = new view_page();
+        view_page *l = new view_page(field);
         l->showMaximized();
     }
 }
@@ -93,23 +93,23 @@ void mainpage::on_button_logout_clicked()
 
 void mainpage::on_button_football_clicked()
 {
-    option_selector();
+    option_selector(football);
 }
 
 
 void mainpage::on_button_basketball_clicked()
 {
-    option_selector();
+    option_selector(basketball);
 }
 
 void mainpage::on_button_volleyball_clicked()
 {
-    option_selector();
+    option_selector(volleyball);
 }
 
 void mainpage::on_button_indoor_clicked()
 {
-    option_selector();
+    option_selector(indoor);
 }
 
 

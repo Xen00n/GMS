@@ -2,6 +2,7 @@
 #define BOOKING_PAGE_H
 
 #include <QMainWindow>
+#include <custom.h>
 
 
 namespace Ui {
@@ -13,7 +14,7 @@ class booking_page : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit booking_page(QWidget *parent = nullptr);
+    explicit booking_page(_field selected_field,QWidget *parent = nullptr);
     ~booking_page();
 
 private:
