@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
     this-> hide();
-    mainpage *log= new mainpage();
+    loginpage *log= new loginpage();
     log->showMaximized();
 }
 
