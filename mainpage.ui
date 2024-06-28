@@ -269,7 +269,12 @@ border-width:0px;</string>
           <item>
            <widget class="QFrame" name="frame_5">
             <property name="styleSheet">
-             <string notr="true"/>
+             <string notr="true">:hover{
+	border-style : solid ;
+	border-width: 2px;
+	border-color: rgb(161, 161, 241);
+	border-radius:30px;
+}</string>
             </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
@@ -281,33 +286,38 @@ border-width:0px;</string>
              <item alignment="Qt::AlignHCenter">
               <widget class="QPushButton" name="button_football">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
-                 <height>200</height>
+                 <width>450</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>600</width>
-                 <height>600</height>
+                 <width>400</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">QPushButton{
+	background-color:transparent;
+	border-image:url(:/img/footballll.png);
+	background-repeat:no-repeat;
+}
+QPushButton:hover{
+
+	border-radius:0px;
+	border-image:url(:/img/footballll_hover.png);
+	background-repeat:no-repeat;
+}</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/img/footballll.png</normaloff>
-                 <selectedon>:/img/footballll_op.png</selectedon>:/img/footballll.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -347,6 +357,14 @@ color:white;</string>
           </item>
           <item>
            <widget class="QFrame" name="frame_6">
+            <property name="styleSheet">
+             <string notr="true">:hover{
+	border-style : solid ;
+	border-width: 2px;
+	border-color: rgb(161, 161, 241);
+	border-radius:30px;
+}</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -357,32 +375,38 @@ color:white;</string>
              <item alignment="Qt::AlignHCenter">
               <widget class="QPushButton" name="button_basketball">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
-                 <height>200</height>
+                 <width>400</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>600</width>
-                 <height>600</height>
+                 <width>400</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">QPushButton{
+	background-color:transparent;
+	border-image:url(:/img/basketball-court.png);
+	background-repeat:no-repeat;
+}
+QPushButton:hover{
+
+	border-radius:0px;
+	border-image:url(:/img/basketball-court_hover.png);
+	background-repeat:no-repeat;
+}</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/img/basketball-court.png</normaloff>:/img/basketball-court.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -432,6 +456,20 @@ color:white;</string>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item>
            <widget class="QFrame" name="frame_7">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">:hover{
+	border-style : solid ;
+	border-width: 2px;
+	border-color: rgb(161, 161, 241);
+	border-radius:30px;
+}</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -442,32 +480,38 @@ color:white;</string>
              <item alignment="Qt::AlignHCenter">
               <widget class="QPushButton" name="button_volleyball">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
-                 <height>200</height>
+                 <width>400</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>600</width>
-                 <height>600</height>
+                 <width>400</width>
+                 <height>275</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">QPushButton{
+	background-color:transparent;
+	border-image:url(:/img/volleyball.png);
+	background-repeat:no-repeat;
+}
+QPushButton:hover{
+
+	border-radius:0px;
+	border-image:url(:/img/volleyball_hover.png);
+	background-repeat:no-repeat;
+}</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/img/volleyball.png</normaloff>:/img/volleyball.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
@@ -505,6 +549,14 @@ color:white;</string>
           </item>
           <item>
            <widget class="QFrame" name="frame_8">
+            <property name="styleSheet">
+             <string notr="true">:hover{
+	border-style : solid ;
+	border-width: 2px;
+	border-color: rgb(161, 161, 241);
+	border-radius:30px;
+}</string>
+            </property>
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -515,32 +567,38 @@ color:white;</string>
              <item alignment="Qt::AlignHCenter">
               <widget class="QPushButton" name="button_indoor">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
                <property name="minimumSize">
                 <size>
-                 <width>200</width>
-                 <height>200</height>
+                 <width>400</width>
+                 <height>300</height>
                 </size>
                </property>
                <property name="maximumSize">
                 <size>
-                 <width>600</width>
-                 <height>600</height>
+                 <width>400</width>
+                 <height>300</height>
                 </size>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">QPushButton{
+	background-color:transparent;
+	border-image:url(:/img/house.png);
+	background-repeat:no-repeat;
+}
+QPushButton:hover{
+
+	border-radius:0px;
+	border-image:url(:/img/house_hover.png);
+	background-repeat:no-repeat;
+}</string>
                </property>
                <property name="text">
                 <string/>
-               </property>
-               <property name="icon">
-                <iconset resource="images.qrc">
-                 <normaloff>:/img/house.png</normaloff>:/img/house.png</iconset>
                </property>
                <property name="iconSize">
                 <size>
