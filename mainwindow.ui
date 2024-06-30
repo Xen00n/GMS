@@ -108,8 +108,8 @@ Ground Management System</string>
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
-           <height>500</height>
+           <width>500</width>
+           <height>400</height>
           </size>
          </property>
          <property name="baseSize">
