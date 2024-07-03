@@ -17,6 +17,9 @@ public:
     explicit booking_page(_field selected_field,QWidget *parent = nullptr);
     ~booking_page();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::booking_page *ui;
 };

@@ -306,7 +306,7 @@ border-width:0px;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="text_name">
             <property name="styleSheet">
              <string notr="true">color:gray;
 background-color:white;</string>
@@ -336,7 +336,7 @@ background-color:white;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="text_batch">
             <property name="placeholderText">
              <string>Batch</string>
             </property>
@@ -362,7 +362,7 @@ background-color:white;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_3">
+           <widget class="QLineEdit" name="text_department">
             <property name="placeholderText">
              <string>Department</string>
             </property>
@@ -388,7 +388,11 @@ background-color:white;</string>
            </widget>
           </item>
           <item>
-           <widget class="QDateEdit" name="dateEdit"/>
+           <widget class="QDateEdit" name="dateEdit">
+            <property name="calendarPopup">
+             <bool>true</bool>
+            </property>
+           </widget>
           </item>
          </layout>
         </widget>
@@ -405,14 +409,14 @@ background-color:white;</string>
           <item>
            <widget class="QPushButton" name="pushButton">
             <property name="text">
-             <string>PushButton</string>
+             <string>Book</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_2">
             <property name="text">
-             <string>PushButton</string>
+             <string>Cancel</string>
             </property>
            </widget>
           </item>
