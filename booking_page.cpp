@@ -1,5 +1,6 @@
 #include "booking_page.h"
 #include "ui_booking_page.h"
+#include "view_page.h"
 
 _field input_field_1;
 
@@ -134,3 +135,11 @@ void booking_page::on_button_clear_clicked()
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
 }
+
+void booking_page::on_button_view_clicked()
+{
+    view_page *view = new view_page(input_field_1);
+    this->hide();
+    view->showMaximized();
+}
+
