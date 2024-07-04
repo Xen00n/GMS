@@ -28,7 +28,7 @@ booking_page::booking_page(_field selected_field, QWidget *parent)
 
     // Creating table if not exists
     QSqlQuery query(DB);
-    query.prepare("CREATE TABLE IF NOT EXISTS bookings (booking_number INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, faculty TEXT, start_date INTEGER, end_date INTEGER, field TEXT)");
+    query.prepare("CREATE TABLE IF NOT EXISTS bookings (booking_number INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, faculty TEXT, batch TEXT, start_date INTEGER, end_date INTEGER, field TEXT)");
     if (!query.exec())
     {
         qDebug() << "Error creating table" << query.lastError().text();
@@ -70,8 +70,9 @@ booking_page::~booking_page()
 
 void booking_page::on_button_book_clicked()
 {
-    QString name = ui->lineEdit_name->text();
-    QString faculty = ui->lineEdit_faculty->text();
+    QString name = ui->text_name->text();
+    QString faculty = ui->text_faculty->text();
+    QString batch = ui->text_batch->text();
     int _date_from = date_to_int(ui->date_from->text());
     int _date_to = date_to_int(ui->date_to->text());
 
@@ -104,9 +105,10 @@ void booking_page::on_button_book_clicked()
     }
 
     // Insert the new booking
-    query.prepare("INSERT INTO bookings (name, faculty, start_date, end_date, field) VALUES (:name, :faculty, :start_date, :end_date, :field)");
+    query.prepare("INSERT INTO bookings (name, faculty, batch, start_date, end_date, field) VALUES (:name, :faculty, :batch, :start_date, :end_date, :field)");
     query.bindValue(":name", name);
     query.bindValue(":faculty", faculty);
+    query.bindValue(":batch", batch);
     query.bindValue(":start_date", _date_from);
     query.bindValue(":end_date", _date_to);
     query.bindValue(":field", enum_to_string(input_field_1));
@@ -126,8 +128,9 @@ void booking_page::on_button_book_clicked()
 
 void booking_page::on_button_clear_clicked()
 {
-    ui->lineEdit_name->setText("");
-    ui->lineEdit_faculty->setText("");
+    ui->text_name->setText("");
+    ui->text_faculty->setText("");
+    ui->text_batch->setText("");
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
 }
