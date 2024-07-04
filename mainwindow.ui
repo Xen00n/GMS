@@ -127,7 +127,7 @@ height: 50px;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/img/GMS_LOGO.png</pixmap>
+          <pixmap resource="images.qrc">:/img/images/GMS_LOGO.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>

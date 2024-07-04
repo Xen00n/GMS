@@ -1,17 +1,13 @@
 <RCC>
     <qresource prefix="/img">
-        <file>GMS_LOGO.png</file>
-        <file>Kathmandu-University-KU.jpg</file>
-        <file>basketball-court.png</file>
-        <file>footballll.png</file>
-        <file>house.png</file>
-        <file>footballll_hover.png</file>
-        <file>basketball-court_hover.png</file>
-        <file>house_hover.png</file>
-        <file>volleyball_hover.png</file>
-        <file>volleyball.png</file>
-    </qresource>
-    <qresource prefix="/database">
-        <file>database/database.db</file>
+        <file>images/basketball-court_hover.png</file>
+        <file>images/basketball-court.png</file>
+        <file>images/footballll_hover.png</file>
+        <file>images/footballll.png</file>
+        <file>images/GMS_LOGO.png</file>
+        <file>images/house_hover.png</file>
+        <file>images/house.png</file>
+        <file>images/volleyball_hover.png</file>
+        <file>images/volleyball.png</file>
     </qresource>
 </RCC>
