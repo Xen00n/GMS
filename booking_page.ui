@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>836</width>
-    <height>773</height>
+    <height>775</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -92,7 +92,7 @@ background-color:rgb(107, 108, 157);</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="images.qrc">:/img/GMS_LOGO.png</pixmap>
+             <pixmap>:/img/GMS_LOGO.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -102,7 +102,7 @@ background-color:rgb(107, 108, 157);</string>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
-             <string notr="true">font: 700 36pt &quot;Segoe UI&quot;;</string>
+             <string notr="true">font: 700 36px &quot;Arial&quot;;</string>
             </property>
             <property name="text">
              <string>GMS</string>
@@ -115,7 +115,7 @@ background-color:rgb(107, 108, 157);</string>
        <item>
         <widget class="QLabel" name="_name">
          <property name="styleSheet">
-          <string notr="true">text-color :rgb(255, 255, 255);</string>
+          <string notr="true"/>
          </property>
          <property name="text">
           <string>NAME</string>
@@ -123,7 +123,7 @@ background-color:rgb(107, 108, 157);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_name">
+        <widget class="QLineEdit" name="text_name">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -150,7 +150,7 @@ font: 16px &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit_faculty">
+        <widget class="QLineEdit" name="text_faculty">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -249,7 +249,7 @@ background-color:rgb(107, 108, 157);</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="button_book">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -364,14 +364,12 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>836</width>
-     <height>26</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="images.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

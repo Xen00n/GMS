@@ -29,11 +29,12 @@ booking_page::~booking_page()
     delete ui;
 }
 
-// void booking_page::on_pushButton_clicked()
-// {
-//     QString name = ui->text_name->text();
-//     QString batch = ui->text_batch->text();
-//     QString department = ui->text_department->text();
-//     QDate _date = ui->dateEdit->date();
-// }
+void booking_page::on_button_book_clicked()
+{
+    QString name = ui->text_name->text();
+    QString batch = ui->text_faculty->text();
+    if(batch.isEmpty() || name.isEmpty()){
+        QMessageBox::information(this,"Empty Field","PLease fill all the field in order to proced!");
+    }
+}
 
