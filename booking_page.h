@@ -17,7 +17,7 @@ public:
     ~booking_page();
 
 private slots:
-    void on_pushButton_clicked();
+    //void on_pushButton_clicked();
 
 private:
     Ui::booking_page *ui;
