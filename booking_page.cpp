@@ -136,10 +136,5 @@ void booking_page::on_button_clear_clicked()
     ui->date_to->setDate(QDate::currentDate());
 }
 
-void booking_page::on_button_view_clicked()
-{
-    view_page *view = new view_page(input_field_1);
-    this->hide();
-    view->showMaximized();
-}
+
 

@@ -21,8 +21,6 @@ private slots:
 
     void on_button_clear_clicked();
 
-    void on_button_view_clicked();
-
 private:
     Ui::booking_page *ui;
     QSqlDatabase DB;
