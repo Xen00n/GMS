@@ -9,7 +9,7 @@ booking_page::booking_page(_field selected_field,QWidget *parent)
 {
     ui->setupUi(this);
     input_field_1 = selected_field;
-    QString path_to_database = QCoreApplication::applicationDirPath() + QDir::separator() + "database" + QDir::separator() + "database.db";
+    QString path_to_database = ":/database/database/database.db";
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName(path_to_database);
 

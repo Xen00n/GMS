@@ -11,4 +11,7 @@
         <file>volleyball_hover.png</file>
         <file>volleyball.png</file>
     </qresource>
+    <qresource prefix="/database">
+        <file>database/database.db</file>
+    </qresource>
 </RCC>
