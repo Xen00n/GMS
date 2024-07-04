@@ -108,8 +108,8 @@ Ground Management System</string>
          </property>
          <property name="maximumSize">
           <size>
-           <width>400</width>
-           <height>500</height>
+           <width>500</width>
+           <height>400</height>
           </size>
          </property>
          <property name="baseSize">
@@ -127,7 +127,7 @@ height: 50px;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/img/GMS_LOGO.png</pixmap>
+          <pixmap resource="images.qrc">:/img/images/GMS_LOGO.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1612</width>
+    <width>1666</width>
     <height>1372</height>
    </rect>
   </property>
@@ -73,7 +73,7 @@ margin:0px;</string>
           <string/>
          </property>
          <property name="pixmap">
-          <pixmap resource="images.qrc">:/img/GMS_LOGO.png</pixmap>
+          <pixmap resource="images.qrc">:/img/images/GMS_LOGO.png</pixmap>
          </property>
          <property name="scaledContents">
           <bool>true</bool>
@@ -338,13 +338,13 @@ border-width:0px;</string>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	background-color:transparent;
-	border-image:url(:/img/footballll.png);
+	border-image:url(:/img/images/footballll.png);
 	background-repeat:no-repeat;
 }
 QPushButton:hover{
 
 	border-radius:0px;
-	border-image:url(:/img/footballll_hover.png);
+	border-image:url(:/img/images/footballll_hover.png);
 	background-repeat:no-repeat;
 }</string>
                </property>
@@ -427,13 +427,13 @@ color:white;</string>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	background-color:transparent;
-	border-image:url(:/img/basketball-court.png);
+	border-image:url(:/img/images/basketball-court.png);
 	background-repeat:no-repeat;
 }
 QPushButton:hover{
 
 	border-radius:0px;
-	border-image:url(:/img/basketball-court_hover.png);
+	border-image:url(:/img/images/basketball-court_hover.png);
 	background-repeat:no-repeat;
 }</string>
                </property>
@@ -534,13 +534,13 @@ color:white;</string>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	background-color:transparent;
-	border-image:url(:/img/volleyball.png);
+	border-image:url(:/img/images/volleyball.png);
 	background-repeat:no-repeat;
 }
 QPushButton:hover{
 
 	border-radius:0px;
-	border-image:url(:/img/volleyball_hover.png);
+	border-image:url(:/img/images/volleyball_hover.png);
 	background-repeat:no-repeat;
 }</string>
                </property>
@@ -623,13 +623,13 @@ color:white;</string>
                <property name="styleSheet">
                 <string notr="true">QPushButton{
 	background-color:transparent;
-	border-image:url(:/img/house.png);
+	border-image:url(:/img/images/house.png);
 	background-repeat:no-repeat;
 }
 QPushButton:hover{
 
 	border-radius:0px;
-	border-image:url(:/img/house_hover.png);
+	border-image:url(:/img/images/house_hover.png);
 	background-repeat:no-repeat;
 }</string>
                </property>

@@ -115,7 +115,7 @@ font: 69px &quot;Arial&quot;;</string>
            </rect>
           </property>
           <property name="styleSheet">
-           <string notr="true">image: url(:/img/GMS_LOGO.png);</string>
+           <string notr="true">image: url(:/img/images/GMS_LOGO.png);</string>
           </property>
           <property name="text">
            <string/>

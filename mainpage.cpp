@@ -112,4 +112,3 @@ void mainpage::on_button_indoor_clicked()
 {
     option_selector(indoor);
 }
-
