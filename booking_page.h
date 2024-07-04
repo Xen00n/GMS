@@ -4,7 +4,6 @@
 #include <QMainWindow>
 #include <custom.h>
 
-
 namespace Ui {
 class booking_page;
 }
@@ -22,6 +21,7 @@ private slots:
 
 private:
     Ui::booking_page *ui;
+    QSqlDatabase DB;
 };
 
 
