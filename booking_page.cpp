@@ -4,8 +4,7 @@
 _field input_field_1;
 
 booking_page::booking_page(_field selected_field, QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::booking_page)
+    : QMainWindow(parent), ui(new Ui::booking_page)
 {
     ui->setupUi(this);
     input_field_1 = selected_field;
@@ -15,9 +14,12 @@ booking_page::booking_page(_field selected_field, QWidget *parent)
     DB = QSqlDatabase::addDatabase("QSQLITE");
     DB.setDatabaseName(path_to_database);
 
-    if(DB.open()) {
+    if (DB.open())
+    {
         qDebug() << "Database connected.";
-    } else {
+    }
+    else
+    {
         qDebug() << "Database not connected.";
         qDebug() << "Error: " << DB.lastError();
         QMessageBox::information(this, "Database error", "Could not connect to database");
@@ -27,14 +29,16 @@ booking_page::booking_page(_field selected_field, QWidget *parent)
     // Creating table if not exists
     QSqlQuery query(DB);
     query.prepare("CREATE TABLE IF NOT EXISTS bookings (booking_number INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, faculty TEXT, start_date INTEGER, end_date INTEGER, field TEXT)");
-    if(!query.exec()) {
+    if (!query.exec())
+    {
         qDebug() << "Error creating table" << query.lastError().text();
     }
 }
 
-
-QString enum_to_string(_field _enum){
-    switch(_enum){
+QString enum_to_string(_field _enum)
+{
+    switch (_enum)
+    {
     case football:
         return "football";
     case basketball:
@@ -47,7 +51,8 @@ QString enum_to_string(_field _enum){
         return "";
     }
 }
-int date_to_int(QString date){
+int date_to_int(QString date)
+{
     QString day = date.mid(0, 2);
     QString month = date.mid(3, 2);
     QString year = date.mid(6, 4);
@@ -70,7 +75,8 @@ void booking_page::on_button_book_clicked()
     int _date_from = date_to_int(ui->date_from->text());
     int _date_to = date_to_int(ui->date_to->text());
 
-    if(faculty.isEmpty() || name.isEmpty() ||(_date_to < _date_from) ){
+    if (faculty.isEmpty() || name.isEmpty() || (_date_to < _date_from))
+    {
         QMessageBox::information(this, "Field error", "Please fill all fields properly with correct information!");
         return;
     }
@@ -80,7 +86,8 @@ void booking_page::on_button_book_clicked()
     query.bindValue(":field", enum_to_string(input_field_1));
     query.bindValue(":start_date", _date_from);
     query.bindValue(":end_date", _date_to);
-    if (!query.exec()) {
+    if (!query.exec())
+    {
         qDebug() << "Error checking for overlapping bookings:" << query.lastError().text();
         QMessageBox::information(this, "Database error", "Error checking for overlapping bookings");
         return;
@@ -88,7 +95,8 @@ void booking_page::on_button_book_clicked()
 
     query.next();
     int count = query.value(0).toInt();
-    if (count > 0) {
+    if (count > 0)
+    {
         QMessageBox::information(this, "Booking error", "Required field is already booked for given range of date");
         ui->date_from->setDate(QDate::currentDate());
         ui->date_to->setDate(QDate::currentDate());
@@ -103,10 +111,13 @@ void booking_page::on_button_book_clicked()
     query.bindValue(":end_date", _date_to);
     query.bindValue(":field", enum_to_string(input_field_1));
 
-    if (!query.exec()) {
+    if (!query.exec())
+    {
         qDebug() << "Error inserting booking:" << query.lastError().text();
         QMessageBox::information(this, "Database error", "Error inserting data");
-    } else {
+    }
+    else
+    {
         qDebug() << "Booking inserted successfully.";
         QMessageBox::information(this, "Booking", "Successfully Booked");
         on_button_clear_clicked();
@@ -120,4 +131,3 @@ void booking_page::on_button_clear_clicked()
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
 }
-
