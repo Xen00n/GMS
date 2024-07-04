@@ -70,8 +70,8 @@ booking_page::~booking_page()
 
 void booking_page::on_button_book_clicked()
 {
-    QString name = ui->text_name->text();
-    QString faculty = ui->text_faculty->text();
+    QString name = ui->lineEdit_name->text();
+    QString faculty = ui->lineEdit_faculty->text();
     int _date_from = date_to_int(ui->date_from->text());
     int _date_to = date_to_int(ui->date_to->text());
 
@@ -126,8 +126,8 @@ void booking_page::on_button_book_clicked()
 
 void booking_page::on_button_clear_clicked()
 {
-    ui->text_name->setText("");
-    ui->text_faculty->setText("");
+    ui->lineEdit_name->setText("");
+    ui->lineEdit_faculty->setText("");
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
 }

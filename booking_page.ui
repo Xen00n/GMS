@@ -92,7 +92,7 @@ background-color:rgb(107, 108, 157);</string>
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>:/img/GMS_LOGO.png</pixmap>
+             <pixmap resource="images.qrc">:/img/images/GMS_LOGO.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -102,7 +102,7 @@ background-color:rgb(107, 108, 157);</string>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
-             <string notr="true">font: 700 36px &quot;Arial&quot;;</string>
+             <string notr="true">font: 700 36pt &quot;Segoe UI&quot;;</string>
             </property>
             <property name="text">
              <string>GMS</string>
@@ -115,7 +115,7 @@ background-color:rgb(107, 108, 157);</string>
        <item>
         <widget class="QLabel" name="_name">
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">color :rgb(255, 255, 255);</string>
          </property>
          <property name="text">
           <string>NAME</string>
@@ -123,7 +123,7 @@ background-color:rgb(107, 108, 157);</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="text_name">
+        <widget class="QLineEdit" name="lineEdit_name">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -150,7 +150,7 @@ font: 16px &quot;Arial&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="text_faculty">
+        <widget class="QLineEdit" name="lineEdit_faculty">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -166,6 +166,37 @@ font: 16px &quot;Arial&quot;;</string>
          </property>
          <property name="placeholderText">
           <string>Faculty</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="text">
+          <string>BATCH</string>
+         </property>
+         <property name="margin">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineEdit_batch">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>40</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border-radius: 10px;
+background-color:white;
+color: rgb(0, 0, 0);
+padding-left:10px;
+font: 16px &quot;Arial&quot;;
+</string>
+         </property>
+         <property name="placeholderText">
+          <string>Batch</string>
          </property>
         </widget>
        </item>
@@ -194,6 +225,12 @@ background-color:rgb(107, 108, 157);</string>
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout">
+          <property name="leftMargin">
+           <number>1</number>
+          </property>
+          <property name="rightMargin">
+           <number>12</number>
+          </property>
           <item>
            <widget class="QLabel" name="label_4">
             <property name="text">
@@ -213,17 +250,39 @@ color: rgb(0, 0, 0);</string>
            </widget>
           </item>
           <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>60</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
            <widget class="QLabel" name="label_5">
             <property name="text">
-             <string> TO:</string>
+             <string>TO:</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QDateEdit" name="date_to">
+            <property name="autoFillBackground">
+             <bool>false</bool>
+            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(0, 0, 0);
 background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="wrapping">
+             <bool>false</bool>
             </property>
             <property name="calendarPopup">
              <bool>true</bool>
@@ -249,7 +308,7 @@ background-color:rgb(107, 108, 157);</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_2">
           <item>
-           <widget class="QPushButton" name="button_book">
+           <widget class="QPushButton" name="pushButton">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -283,7 +342,23 @@ QPushButton:pressed{
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="button_clear">
+           <spacer name="verticalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>60</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
             <property name="minimumSize">
              <size>
               <width>0</width>
@@ -315,6 +390,22 @@ QPushButton:pressed{
              <string>CLEAR</string>
             </property>
            </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>30</width>
+              <height>60</height>
+             </size>
+            </property>
+           </spacer>
           </item>
           <item>
            <widget class="QPushButton" name="pushButton_3">
@@ -370,6 +461,8 @@ QPushButton:pressed{
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>
