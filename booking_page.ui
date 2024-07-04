@@ -207,26 +207,10 @@ font: 16px &quot;Arial&quot;;
          </property>
         </widget>
        </item>
-       <item>
-        <spacer name="verticalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeType">
-          <enum>QSizePolicy::Fixed</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>20</width>
-           <height>70</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
        <item alignment="Qt::AlignHCenter">
         <widget class="QLabel" name="label_3">
          <property name="styleSheet">
-          <string notr="true"/>
+          <string notr="true">padding-top: 20px;</string>
          </property>
          <property name="text">
           <string>DATE</string>
