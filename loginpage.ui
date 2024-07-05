@@ -38,7 +38,7 @@
       <property name="minimumSize">
        <size>
         <width>700</width>
-        <height>700</height>
+        <height>650</height>
        </size>
       </property>
       <property name="maximumSize">
@@ -88,56 +88,40 @@ background-color:rgb(107, 108, 157);</string>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <widget class="QLabel" name="label_3">
-          <property name="geometry">
-           <rect>
-            <x>320</x>
-            <y>0</y>
-            <width>179</width>
-            <height>106</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color:rgb(255,255,255);
-font: 69px &quot;Arial&quot;;</string>
-          </property>
-          <property name="text">
-           <string>GMS</string>
-          </property>
-         </widget>
-         <widget class="QLabel" name="label_pic">
-          <property name="geometry">
-           <rect>
-            <x>170</x>
-            <y>0</y>
-            <width>131</width>
-            <height>106</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">image: url(:/img/images/GMS_LOGO.png);</string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
-         <widget class="QPushButton" name="pushButton">
-          <property name="geometry">
-           <rect>
-            <x>190</x>
-            <y>10</y>
-            <width>91</width>
-            <height>81</height>
-           </rect>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">background-color:rgba(0, 0, 0, 0);
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <item alignment="Qt::AlignRight">
+           <widget class="QPushButton" name="pushButton">
+            <property name="styleSheet">
+             <string notr="true">background-color:rgba(0, 0, 0, 0);
 </string>
-          </property>
-          <property name="text">
-           <string/>
-          </property>
-         </widget>
+            </property>
+            <property name="text">
+             <string/>
+            </property>
+            <property name="icon">
+             <iconset resource="images.qrc">
+              <normaloff>:/img/images/GMS_LOGO.png</normaloff>:/img/images/GMS_LOGO.png</iconset>
+            </property>
+            <property name="iconSize">
+             <size>
+              <width>77</width>
+              <height>73</height>
+             </size>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">color:rgb(255,255,255);
+font: 69px &quot;Arial&quot;;</string>
+            </property>
+            <property name="text">
+             <string>GMS</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
        <item alignment="Qt::AlignHCenter">
@@ -158,6 +142,12 @@ font: 69px &quot;Arial&quot;;</string>
        </item>
        <item>
         <widget class="QFrame" name="frame_3">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>16777215</width>
@@ -192,6 +182,12 @@ font: 69px &quot;Arial&quot;;</string>
           </item>
           <item>
            <widget class="QLineEdit" name="text_username">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>50</height>
+             </size>
+            </property>
             <property name="maximumSize">
              <size>
               <width>1000</width>
@@ -247,6 +243,18 @@ font: 16px &quot;Arial&quot;;</string>
        </item>
        <item>
         <widget class="QFrame" name="frame_2">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
          <property name="maximumSize">
           <size>
            <width>1000</width>
@@ -442,6 +450,8 @@ QPushButton:pressed{
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="images.qrc"/>
+ </resources>
  <connections/>
 </ui>
