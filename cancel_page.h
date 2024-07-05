@@ -2,6 +2,9 @@
 #define CANCEL_PAGE_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QMessageBox>
+#include <QIntValidator>
 #include <custom.h>
 
 

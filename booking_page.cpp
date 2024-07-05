@@ -1,8 +1,25 @@
 #include "booking_page.h"
 #include "ui_booking_page.h"
-#include "view_page.h"
+
 
 _field input_field_1;
+
+QString enum_to_string(_field _enum)
+{
+    switch (_enum)
+    {
+    case football:
+        return "football";
+    case basketball:
+        return "basketball";
+    case volleyball:
+        return "volleyball";
+    case indoor:
+        return "indoor";
+    default:
+        return "";
+    }
+}
 
 booking_page::booking_page(_field selected_field, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::booking_page)
@@ -36,22 +53,7 @@ booking_page::booking_page(_field selected_field, QWidget *parent)
     }
 }
 
-QString enum_to_string(_field _enum)
-{
-    switch (_enum)
-    {
-    case football:
-        return "football";
-    case basketball:
-        return "basketball";
-    case volleyball:
-        return "volleyball";
-    case indoor:
-        return "indoor";
-    default:
-        return "";
-    }
-}
+
 int date_to_int(QString date)
 {
     QString day = date.mid(0, 2);
@@ -63,7 +65,6 @@ int date_to_int(QString date)
 booking_page::~booking_page()
 {
     // Close the database connection and remove it
-    QString connectionName = DB.connectionName();
     DB.close();
     QSqlDatabase::removeDatabase(QString(PROJECT_DIR) + "/database/database.db");
     delete ui;

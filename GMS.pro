@@ -22,11 +22,11 @@ SOURCES += \
 HEADERS += \
     booking_page.h \
     cancel_page.h \
-    custom.h \
     loginpage.h \
     mainpage.h \
     mainwindow.h \
-    view_page.h
+    view_page.h \
+    custom.h
 
 FORMS += \
     booking_page.ui \

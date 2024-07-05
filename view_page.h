@@ -2,6 +2,9 @@
 #define VIEW_PAGE_H
 
 #include <QMainWindow>
+#include <QtSql>
+#include <QMessageBox>
+#include <QIntValidator>
 #include <custom.h>
 
 namespace Ui {
@@ -16,8 +19,12 @@ public:
     explicit view_page(_field selected_field,QWidget *parent = nullptr);
     ~view_page();
 
+private slots:
+    void on_button_refresh_clicked();
+
 private:
     Ui::view_page *ui;
+    QSqlDatabase DB;
 };
 
 #endif // VIEW_PAGE_H
