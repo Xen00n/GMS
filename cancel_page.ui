@@ -539,57 +539,7 @@ QPushButton:pressed{
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>50</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_2">
-            <property name="minimumSize">
-             <size>
               <width>200</width>
-              <height>40</height>
-             </size>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">QPushButton
-{
-border-radius: 10px;
-border-color:rgb(255, 255, 255);
-border-style:solid;
-border-width:2px;
-font: 20px &quot;Arial&quot;;
-background-color: rgb(255, 255, 255);
-color: rgb(255, 255, 255);
-background-color: rgb(171, 114, 65);
-}
-
-QPushButton:hover{
-        background-color:rgba(134, 243, 210, 128);
-}
-QPushButton:pressed{
-        color:rgba(0, 0, 0, 66);
-        background-color:rgba(134, 243, 210, 64);
-}</string>
-            </property>
-            <property name="text">
-             <string>CLEAR</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_6">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>50</width>
               <height>20</height>
              </size>
             </property>
@@ -659,7 +609,7 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>1324</width>
-     <height>43</height>
+     <height>37</height>
     </rect>
    </property>
   </widget>
