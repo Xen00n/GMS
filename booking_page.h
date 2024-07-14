@@ -2,8 +2,11 @@
 #define BOOKING_PAGE_H
 
 #include <QMainWindow>
-#include <custom.h>
 #include <QDebug>
+#include <QtSql>
+#include <QMessageBox>
+#include <QIntValidator>
+#include <custom.h>
 
 namespace Ui {
 class booking_page;

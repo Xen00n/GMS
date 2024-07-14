@@ -20,7 +20,7 @@ private slots:
 
     void on_button_show_clicked();
 
-    void on_pushButton_clicked();
+    void on_logo_clicked();
 
 private:
     Ui::loginpage *ui;

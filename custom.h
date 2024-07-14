@@ -7,12 +7,14 @@
 #include <QDebug>
 
 
+
 typedef enum __field{
     football,
     basketball,
     volleyball,
     indoor
 }_field;
+
 
 
 

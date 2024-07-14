@@ -59,7 +59,7 @@ void loginpage::on_button_show_clicked()
 }
 
 
-void loginpage::on_pushButton_clicked()
+void loginpage::on_logo_clicked()
 {
     this->hide();
     MainWindow *mai = new MainWindow();
