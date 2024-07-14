@@ -102,7 +102,7 @@ background-color:rgb(107, 108, 157);</string>
           <item>
            <widget class="QLabel" name="label_2">
             <property name="styleSheet">
-             <string notr="true">font: 700 36pt &quot;Segoe UI&quot;;</string>
+             <string notr="true">font: 700 36pt &quot;Arial&quot;;</string>
             </property>
             <property name="text">
              <string>GMS</string>
@@ -427,11 +427,11 @@ QPushButton:pressed{
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="booking_number">
             <property name="minimumSize">
              <size>
               <width>200</width>
-              <height>0</height>
+              <height>40</height>
              </size>
             </property>
             <property name="maximumSize">
@@ -445,6 +445,9 @@ QPushButton:pressed{
 color:black;
 
 </string>
+            </property>
+            <property name="placeholderText">
+             <string>Booking Number</string>
             </property>
            </widget>
           </item>
@@ -495,8 +498,8 @@ background-color:rgb(107, 108, 157);</string>
             </property>
            </spacer>
           </item>
-          <item>
-           <widget class="QPushButton" name="pushButton">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="cancel_button">
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -539,14 +542,14 @@ QPushButton:pressed{
             </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>200</width>
+              <width>390</width>
               <height>20</height>
              </size>
             </property>
            </spacer>
           </item>
-          <item>
-           <widget class="QPushButton" name="pushButton_3">
+          <item alignment="Qt::AlignHCenter">
+           <widget class="QPushButton" name="refresh_button">
             <property name="minimumSize">
              <size>
               <width>200</width>
@@ -575,7 +578,7 @@ QPushButton:pressed{
 }</string>
             </property>
             <property name="text">
-             <string>REFRESH</string>
+             <string>REFRESH TABLE</string>
             </property>
            </widget>
           </item>
@@ -609,7 +612,7 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>1324</width>
-     <height>37</height>
+     <height>24</height>
     </rect>
    </property>
   </widget>

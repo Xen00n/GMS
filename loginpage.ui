@@ -90,7 +90,7 @@ background-color:rgb(107, 108, 157);</string>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <item alignment="Qt::AlignRight">
-           <widget class="QPushButton" name="pushButton">
+           <widget class="QPushButton" name="logo">
             <property name="styleSheet">
              <string notr="true">background-color:rgba(0, 0, 0, 0);
 </string>

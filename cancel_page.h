@@ -7,7 +7,6 @@
 #include <QIntValidator>
 #include <custom.h>
 
-
 namespace Ui {
 class cancel_page;
 }
@@ -17,11 +16,19 @@ class cancel_page : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit cancel_page(_field selected_field,QWidget *parent = nullptr);
+    explicit cancel_page(_field selected_field, QWidget *parent = nullptr);
     ~cancel_page();
+    void loadAllBookings();
+    void loadBookingsWithinRange(int _start_date, int _end_date);
+
+private slots:
+    void on_refresh_button_clicked();
+
+    void on_cancel_button_clicked();
 
 private:
     Ui::cancel_page *ui;
+    QSqlDatabase DB;
 };
 
 #endif // CANCEL_PAGE_H

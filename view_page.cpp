@@ -99,7 +99,7 @@ void view_page::on_button_refresh_clicked()
     int _start_date = date_to_int_3(ui->date_from->text());
     int _end_date = date_to_int_3(ui->date_to->text());
     QSqlQuery query;
-    query.prepare("SELECT * FROM bookings WHERE field = :field AND ((start_date>=:start_date AND start_date=<:end_date) OR (end_date>=:start_date AND end_date=<:end_date))");
+    query.prepare("SELECT * FROM bookings WHERE field = :field AND ((start_date>=:start_date AND start_date<=:end_date) OR (end_date>=:start_date AND end_date<=:end_date))");
     query.bindValue(":field",enum_to_string_3(input_field_3));
     query.bindValue(":start_date",_start_date);
     query.bindValue(":end_date",_end_date);
