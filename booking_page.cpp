@@ -2,66 +2,21 @@
 #include "ui_booking_page.h"
 
 
-_field input_field_1;
+_field input_field;
 
-QString enum_to_string(_field _enum)
-{
-    switch (_enum)
-    {
-    case football:
-        return "football";
-    case basketball:
-        return "basketball";
-    case volleyball:
-        return "volleyball";
-    case indoor:
-        return "indoor";
-    default:
-        return "";
-    }
-}
 
-booking_page::booking_page(_field selected_field, QWidget *parent)
+booking_page::booking_page(_field selected_field, QSqlDatabase *_DB, QWidget *parent)
     : QMainWindow(parent), ui(new Ui::booking_page)
 {
     ui->setupUi(this);
-    input_field_1 = selected_field;
+    input_field = selected_field;
+    DB = *_DB;
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
-    QString path_to_database = QString(PROJECT_DIR) + "/database/database.db";
-    DB = QSqlDatabase::addDatabase("QSQLITE");
-    DB.setDatabaseName(path_to_database);
-
-    if (DB.open())
-    {
-        qDebug() << "Database connected.";
-    }
-    else
-    {
-        qDebug() << "Database not connected.";
-        qDebug() << "Error: " << DB.lastError();
-        QMessageBox::information(this, "Database error", "Could not connect to database");
-        QCoreApplication::quit();
-    }
-
-    // Creating table if not exists
-    QSqlQuery query(DB);
-    query.prepare("CREATE TABLE IF NOT EXISTS bookings (booking_number INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, faculty TEXT, batch TEXT, start_date INTEGER, end_date INTEGER, field TEXT)");
-    if (!query.exec())
-    {
-        qDebug() << "Error creating table" << query.lastError().text();
-    }
 }
 
 
-int date_to_int(QString date)
-{
-    QString day = date.mid(0, 2);
-    QString month = date.mid(3, 2);
-    QString year = date.mid(6, 4);
-    int dateInt = year.toInt() * 10000 + month.toInt() * 100 + day.toInt();
-    return dateInt;
-}
+
 booking_page::~booking_page()
 {
     // Close the database connection and remove it
@@ -86,7 +41,7 @@ void booking_page::on_button_book_clicked()
 
     QSqlQuery query(DB);
     query.prepare(R"(SELECT COUNT(*) FROM bookings WHERE field = :field AND start_date <= :end_date AND end_date >= :start_date)");
-    query.bindValue(":field", enum_to_string(input_field_1));
+    query.bindValue(":field", enum_to_string(input_field));
     query.bindValue(":start_date", _date_from);
     query.bindValue(":end_date", _date_to);
     if (!query.exec())
@@ -113,7 +68,7 @@ void booking_page::on_button_book_clicked()
     query.bindValue(":batch", batch);
     query.bindValue(":start_date", _date_from);
     query.bindValue(":end_date", _date_to);
-    query.bindValue(":field", enum_to_string(input_field_1));
+    query.bindValue(":field", enum_to_string(input_field));
 
     if (!query.exec())
     {

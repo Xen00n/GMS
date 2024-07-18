@@ -16,7 +16,7 @@ class cancel_page : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit cancel_page(_field selected_field, QWidget *parent = nullptr);
+    explicit cancel_page(_field selected_field, QSqlDatabase *_DB, QWidget *parent = nullptr);
     ~cancel_page();
     void loadAllBookings();
     void loadBookingsWithinRange(int _start_date, int _end_date);

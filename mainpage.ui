@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1666</width>
+    <width>1718</width>
     <height>1372</height>
    </rect>
   </property>
@@ -172,7 +172,7 @@ QPushButton:checked{
 }</string>
          </property>
          <property name="text">
-          <string>Cancel</string>
+          <string>Delete</string>
          </property>
          <property name="autoExclusive">
           <bool>false</bool>
