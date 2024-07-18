@@ -422,7 +422,7 @@ QPushButton:pressed{
 }</string>
             </property>
             <property name="text">
-             <string>BOOKING NO:</string>
+             <string>Booking No. :</string>
             </property>
            </widget>
           </item>
@@ -443,8 +443,7 @@ QPushButton:pressed{
             <property name="styleSheet">
              <string notr="true">background-color:white;
 color:black;
-
-</string>
+padding-left: 6px;</string>
             </property>
             <property name="placeholderText">
              <string>Booking Number</string>
@@ -528,7 +527,7 @@ QPushButton:pressed{
 }</string>
             </property>
             <property name="text">
-             <string>CANCEL</string>
+             <string>DELETE</string>
             </property>
            </widget>
           </item>
@@ -612,7 +611,7 @@ QPushButton:pressed{
      <x>0</x>
      <y>0</y>
      <width>1324</width>
-     <height>24</height>
+     <height>43</height>
     </rect>
    </property>
   </widget>

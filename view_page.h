@@ -16,7 +16,7 @@ class view_page : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit view_page(_field selected_field,QWidget *parent = nullptr);
+    explicit view_page(_field selected_field, QSqlDatabase *_DB,QWidget *parent = nullptr);
     ~view_page();
 
 private slots:

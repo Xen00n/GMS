@@ -13,6 +13,7 @@ DEFINES += PROJECT_DIR=\\\"$$PWD\\\"
 SOURCES += \
     booking_page.cpp \
     cancel_page.cpp \
+    custom.cpp \
     loginpage.cpp \
     main.cpp \
     mainpage.cpp \

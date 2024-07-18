@@ -15,8 +15,8 @@ typedef enum __field{
     indoor
 }_field;
 
-
-
-
+QString enum_to_string(_field _enum);
+int date_to_int(QString date);
+QString int_to_date(const QVariant &dateVariant);
 
 #endif // CUSTOM_H
