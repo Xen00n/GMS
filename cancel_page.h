@@ -20,11 +20,12 @@ public:
     ~cancel_page();
     void loadAllBookings();
     void loadBookingsWithinRange(int _start_date, int _end_date);
+    bool dateRangeModified;
 
 private slots:
     void on_refresh_button_clicked();
-
     void on_cancel_button_clicked();
+    void on_date_changed(); // Slot for handling date change
 
 private:
     Ui::cancel_page *ui;
