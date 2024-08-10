@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Ground Management System - View Page </string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(84,85,121);</string>
