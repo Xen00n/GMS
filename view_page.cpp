@@ -6,38 +6,131 @@
 
 _field input_field_3;
 
-view_page::view_page(_field selected_field, QSqlDatabase *_DB,QWidget *parent)
+QString enum_to_string_3(_field _enum)
+{
+    switch (_enum)
+    {
+    case football:
+        return "football";
+    case basketball:
+        return "basketball";
+    case volleyball:
+        return "volleyball";
+    case indoor:
+        return "indoor";
+    default:
+        return "";
+    }
+}
+
+int date_to_int_3(QString date)
+{
+    QString day = date.mid(0, 2);
+    QString month = date.mid(3, 2);
+    QString year = date.mid(6, 4);
+    int dateInt = year.toInt() * 10000 + month.toInt() * 100 + day.toInt();
+    return dateInt;
+}
+
+QString int_to_date_3(const QVariant &dateVariant)
+{
+    int dateInt = dateVariant.toInt();
+    int year = dateInt / 10000;
+    int month = (dateInt % 10000) / 100;
+    int day = dateInt % 100;
+    QDate date(year, month, day);
+    return date.toString("yyyy-MM-dd");
+}
+
+void view_page::loadAllBookings()
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM bookings WHERE field = :field");
+    query.bindValue(":field", enum_to_string_3(input_field_3));
+    ui->tableWidget->verticalHeader()->setVisible(false);
+
+    // Clear the table before loading data
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
+
+    if (query.exec()) {
+        int RowNumber = 0;
+        while (query.next())
+        {
+            ui->tableWidget->insertRow(RowNumber);
+            ui->tableWidget->setRowHeight(RowNumber, 40);
+            ui->tableWidget->setItem(RowNumber, 0, new QTableWidgetItem(query.value("booking_number").toString()));
+            ui->tableWidget->setItem(RowNumber, 1, new QTableWidgetItem(query.value("name").toString()));
+            ui->tableWidget->setItem(RowNumber, 2, new QTableWidgetItem(query.value("faculty").toString()));
+            ui->tableWidget->setItem(RowNumber, 3, new QTableWidgetItem(query.value("batch").toString()));
+            ui->tableWidget->setItem(RowNumber, 4, new QTableWidgetItem(int_to_date_3(query.value("start_date"))));
+            ui->tableWidget->setItem(RowNumber, 5, new QTableWidgetItem(int_to_date_3(query.value("end_date"))));
+            RowNumber++;
+        }
+    } else {
+        qDebug() << "Data loading to table error:" << query.lastError().text();
+    }
+}
+
+void view_page::loadBookingsWithinRange(int startDate, int endDate)
+{
+    QSqlQuery query;
+    query.prepare("SELECT * FROM bookings WHERE field = :field AND ((start_date >= :start_date AND start_date <= :end_date) OR (end_date >= :start_date AND end_date <= :end_date))");
+    query.bindValue(":field", enum_to_string_3(input_field_3));
+    query.bindValue(":start_date", startDate);
+    query.bindValue(":end_date", endDate);
+
+    // Clear the table before loading data
+    ui->tableWidget->clearContents();
+    ui->tableWidget->setRowCount(0);
+    ui->tableWidget->verticalHeader()->setVisible(false);
+
+    if (query.exec()) {
+        int RowNumber = 0;
+        while (query.next()) {
+            ui->tableWidget->insertRow(RowNumber);
+            ui->tableWidget->setRowHeight(RowNumber, 40);
+            ui->tableWidget->setItem(RowNumber, 0, new QTableWidgetItem(query.value("booking_number").toString()));
+            ui->tableWidget->setItem(RowNumber, 1, new QTableWidgetItem(query.value("name").toString()));
+            ui->tableWidget->setItem(RowNumber, 2, new QTableWidgetItem(query.value("faculty").toString()));
+            ui->tableWidget->setItem(RowNumber, 3, new QTableWidgetItem(query.value("batch").toString()));
+            ui->tableWidget->setItem(RowNumber, 4, new QTableWidgetItem(int_to_date_3(query.value("start_date").toInt())));
+            ui->tableWidget->setItem(RowNumber, 5, new QTableWidgetItem(int_to_date_3(query.value("end_date").toInt())));
+            RowNumber++;
+        }
+    } else {
+        qDebug() << "Data loading to table error:" << query.lastError().text();
+    }
+}
+
+view_page::view_page(_field selected_field, QSqlDatabase *_DB, QWidget *parent)
     : QMainWindow(parent)
+    , dateRangeModified(false)
     , ui(new Ui::view_page)
 {
     ui->setupUi(this);
     input_field_3 = selected_field;
-    DB = *_DB;
     ui->date_from->setDate(QDate::currentDate());
     ui->date_to->setDate(QDate::currentDate());
-    QSqlQuery query;
-    query.prepare("SELECT * FROM bookings WHERE field = :field");
-    query.bindValue(":field",enum_to_string(input_field_3));
-    ui->tableWidget->verticalHeader()->setVisible(false);
-    if (query.exec()) {
-        int RowNumber = 0;
+    DB = *_DB;
 
-        while(query.next())
-        {
-            ui->tableWidget->insertRow(RowNumber);
-            ui->tableWidget->setRowHeight(RowNumber,40);
-            ui->tableWidget->setItem(RowNumber, 0, new QTableWidgetItem(QString(QString::number(RowNumber+1))));
-            ui->tableWidget->setItem(RowNumber, 1, new QTableWidgetItem(QString(query.value("name").toString())));
-            ui->tableWidget->setItem(RowNumber, 2, new QTableWidgetItem(QString(query.value("faculty").toString())));
-            ui->tableWidget->setItem(RowNumber, 3, new QTableWidgetItem(QString(query.value("batch").toString())));
-            ui->tableWidget->setItem(RowNumber, 4, new QTableWidgetItem(QString(int_to_date(query.value("start_date")))));
-            ui->tableWidget->setItem(RowNumber, 5, new QTableWidgetItem(QString(int_to_date(query.value("end_date")))));
-            RowNumber++;
-        }
-    } else {
-        qDebug() << "Data loading to table error.";
+    if (DB.open())
+    {
+        qDebug() << "Database connected.";
+    }
+    else
+    {
+        qDebug() << "Database not connected.";
+        qDebug() << "Error: " << DB.lastError();
+        QMessageBox::information(this, "Database error", "Could not connect to database");
+        QCoreApplication::quit();
     }
 
+    loadAllBookings();
+
+    // Connect signals to slots for detecting date changes
+    connect(ui->date_from, &QDateEdit::dateChanged, this, &view_page::on_date_changed);
+    connect(ui->date_to, &QDateEdit::dateChanged, this, &view_page::on_date_changed);
 }
 
 view_page::~view_page()
@@ -45,36 +138,24 @@ view_page::~view_page()
     delete ui;
 }
 
+void view_page::on_date_changed()
+{
+    dateRangeModified = true;  // Set the flag when the date is changed
+}
 
 void view_page::on_button_refresh_clicked()
 {
-    int _start_date = date_to_int(ui->date_from->text());
-    int _end_date = date_to_int(ui->date_to->text());
-    QSqlQuery query;
-    query.prepare("SELECT * FROM bookings WHERE field = :field AND ((start_date>=:start_date AND start_date<=:end_date) OR (end_date>=:start_date AND end_date<=:end_date))");
-    query.bindValue(":field",enum_to_string(input_field_3));
-    query.bindValue(":start_date",_start_date);
-    query.bindValue(":end_date",_end_date);
-    ui->tableWidget->clearContents();
-    ui->tableWidget->setRowCount(0);
-    ui->tableWidget->verticalHeader()->setVisible(false);
-    if (query.exec()) {
-        int RowNumber = 0;
-
-        while(query.next())
-        {
-            ui->tableWidget->insertRow(RowNumber);
-            ui->tableWidget->setRowHeight(RowNumber,40);
-            ui->tableWidget->setItem(RowNumber, 0, new QTableWidgetItem(QString(QString::number(RowNumber+1))));
-            ui->tableWidget->setItem(RowNumber, 1, new QTableWidgetItem(QString(query.value("name").toString())));
-            ui->tableWidget->setItem(RowNumber, 2, new QTableWidgetItem(QString(query.value("faculty").toString())));
-            ui->tableWidget->setItem(RowNumber, 3, new QTableWidgetItem(QString(query.value("batch").toString())));
-            ui->tableWidget->setItem(RowNumber, 4, new QTableWidgetItem(QString(int_to_date(query.value("start_date")))));
-            ui->tableWidget->setItem(RowNumber, 5, new QTableWidgetItem(QString(int_to_date(query.value("end_date")))));
-            RowNumber++;
-        }
+    if (dateRangeModified) {
+        int _start_date = date_to_int_3(ui->date_from->text());
+        int _end_date = date_to_int_3(ui->date_to->text());
+        loadBookingsWithinRange(_start_date, _end_date);
     } else {
-        qDebug() << "Data loading to table error.";
+        loadAllBookings();
     }
 }
+
+
+
+
+
 
