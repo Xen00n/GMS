@@ -18,9 +18,13 @@ class view_page : public QMainWindow
 public:
     explicit view_page(_field selected_field, QSqlDatabase *_DB,QWidget *parent = nullptr);
     ~view_page();
+    bool dateRangeModified;
 
 private slots:
     void on_button_refresh_clicked();
+    void loadAllBookings();
+    void loadBookingsWithinRange(int _start_date, int _end_date);
+    void on_date_changed(); // Slot for handling date change
 
 private:
     Ui::view_page *ui;
@@ -28,3 +32,4 @@ private:
 };
 
 #endif // VIEW_PAGE_H
+
